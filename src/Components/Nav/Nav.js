@@ -1,12 +1,24 @@
 import React from 'react'
-import { NavLink } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import './Nav.css'
 
 const Nav = () => {
+	const location = useLocation()
+	
 	return(
-		<nav className='nav-bar'>
-			<NavLink className='nav-home' to='/'>Home</NavLink>
-			<NavLink className='nav-favorites' to='/favorites'>Favorites</NavLink>
+		<nav>
+			<Link to='/' className='nav-home'>
+				<h1 className='logo'>VeggieLovers</h1>
+			</Link>
+			{location.pathname !== '/favorites' ? (
+				<Link to='/favorites'>
+					<button>Favorites</button>
+				</Link>
+			) : (
+				<Link to='/' className='nav-favorites'>
+					<button>Home</button>
+				</Link>
+			)}
 		</nav>
 	)
 }
