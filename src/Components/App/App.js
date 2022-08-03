@@ -5,6 +5,7 @@ import './App.css'
 
 // Pages
 import Nav from '../../Components/Nav/Nav.js'
+import Welcome from '../../Components/Welcome/Welcome.js'
 
 class App extends Component {
 	constructor() {
@@ -18,6 +19,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Nav />
+				<Welcome />
 				<header className="App-header">
 					<h1>
 						VeggieLovers
