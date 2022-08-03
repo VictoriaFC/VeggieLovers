@@ -7,6 +7,7 @@ import './App.css'
 import Nav from '../../Components/Nav/Nav.js'
 import Welcome from '../../Components/Welcome/Welcome.js'
 import Meals from '../../Components/Meals/Meals.js'
+import Favorites from '../../Components/Favorites/Favorites.js'
 
 class App extends Component {
 	constructor() {
@@ -22,6 +23,7 @@ class App extends Component {
 				<Nav />
 				<Welcome />
 				<Meals />
+				<Favorites />
 			</div>
 		);
 	}
