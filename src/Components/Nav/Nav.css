@@ -2,9 +2,17 @@ nav {
 	color: black;
 	display: flex;
 	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	padding-right: 10px;
 }
 
 .nav-home,
 .nav-favorites {
 	padding: 10px;
+	cursor: pointer;
+}
+
+.veggie-lovers-logo {
+	cursor: pointer;
 }
