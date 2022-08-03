@@ -1,12 +1,13 @@
 import React from 'react'
 import './MealCard.css'
 
-const MealCard = () => {
-	return(
+const MealCard = ({id, name, description, instructions, ingredients}) => {
+	return (
 		<div className='meal-card'>
-			<h3>meal name</h3>
-			<p>meal description</p>
-			<button>See Recipe</button>
+			<h3>{name}</h3>
+			<p>{description}</p>
+			<p>{instructions}</p>
+			<p>{ingredients}</p>
 		</div>
 	)
 }
