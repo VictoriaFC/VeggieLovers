@@ -1,11 +1,14 @@
 import React from 'react'
 import './FavoritesCard.css'
 
-const FavoritesCard = () => {
+const FavoritesCard = ({id, name, description, instructions, ingredients, removeMealFromFavorites, isFavorite}) => {
 	return (
-		<div>
-			<h3>meal name</h3>
-			<p>meal description</p>
+		<div className='meal-card'>
+			<h3>{name}</h3>
+			<p>{description}</p>
+			<p>{instructions}</p>
+			<p>{ingredients}</p>
+			<button onClick={() => removeMealFromFavorites(id)}>Remove Favorite</button>
 		</div>
 	)
 }

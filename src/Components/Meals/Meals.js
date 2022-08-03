@@ -2,8 +2,9 @@ import React from 'react'
 import './Meals.css'
 import MealCard from '../../Components/MealCard/MealCard.js'
 
-const Meals = ({meals}) => {
-	const mealCard = meals.map(meal => {
+const Meals = ({meals, addMealToFavorites}) => {
+
+	const mealCardInfo = meals.map(meal => {
 		return(
 			<MealCard 
 				id={meal.id}
@@ -12,12 +13,14 @@ const Meals = ({meals}) => {
 				description={meal.description}
 				instructions={meal.instructions}
 				ingredients={meal.ingredients}
+				isFavorite={meal.isFavorite}
+				addMealToFavorites={addMealToFavorites}
 			/>
 		)
 	})
 	return(
 		<div className='meals-container'>
-			{mealCard}
+			{mealCardInfo}
 		</div>
 	)
 }
