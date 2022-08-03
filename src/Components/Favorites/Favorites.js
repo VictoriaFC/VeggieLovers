@@ -5,7 +5,8 @@ import FavoritesCard from '../FavoritesCard/FavoritesCard'
 const Favorites = () => {
 	return (
 		<div className='favorites-container'>
-			<h3>I'm the favorites container</h3>
+			<FavoritesCard />
+			<FavoritesCard />
 			<FavoritesCard />
 		</div>
 	)
