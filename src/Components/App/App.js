@@ -13,22 +13,7 @@ class App extends Component {
 	constructor() {
 		super()
 		this.state = {
-			meals: [
-				{
-					id: 1,
-					name: "Grilled Cauliflower Tacos",
-					description: "These cauliflower tacos are spiced to perfection and oh so satisfying. Cauliflower is marinated in a zesty, savory blend of lime juice, brown sugar, and tons of spices, then grilled to charred perfection. To build the tacos, layer the cauliflower on warm tortillas with plenty of the creamy, smoky poblano-pepita sauce, cabbage, cilantro, and crema.",
-					instructions: 'instructions go here',
-					ingredients: 'ingredients go here'
-				},
-				{
-					id: 2, 
-					name: "Korean Corn Cheese Spicy Ramen", 
-					description: "We combined two Korean classics–corn cheese and spicy ramen–to make this garlicky, spicy, and cheesy dish that’s sure to be a snack time favorite!",
-					instructions: 'instructions go here',
-					ingredients: 'ingredients go here'
-				}
-			]
+			meals: []
 		}
 	}
 	
