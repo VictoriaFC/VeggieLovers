@@ -1,9 +1,14 @@
 import React from 'react'
 import './Meals.css'
+import MealCard from '../../Components/MealCard/MealCard.js'
 
 const Meals = () => {
 	return(
-		<div className='meals-container'>I am the meals container</div>
+		<div className='meals-container'>
+			<MealCard />
+			<MealCard />
+			<MealCard />
+		</div>
 	)
 }
 
