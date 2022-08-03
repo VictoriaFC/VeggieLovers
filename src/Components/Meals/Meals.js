@@ -3,7 +3,8 @@ import './Meals.css'
 import MealCard from '../../Components/MealCard/MealCard.js'
 
 const Meals = ({meals}) => {
-	const mealCard = meals.map(meal => {
+
+	const mealCardInfo = meals.map(meal => {
 		return(
 			<MealCard 
 				id={meal.id}
@@ -17,7 +18,7 @@ const Meals = ({meals}) => {
 	})
 	return(
 		<div className='meals-container'>
-			{mealCard}
+			{mealCardInfo}
 		</div>
 	)
 }
