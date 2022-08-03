@@ -36,7 +36,8 @@ class App extends Component {
 				name: recipe.name,
 				description: recipe.description,
 				instructions: this.parseApiInstructions(recipe.instructions),
-				ingredients: this.parseApiIngredients(recipe.sections)
+				ingredients: this.parseApiIngredients(recipe.sections),
+				isFavorite: false
 			}
 		})
 	}
@@ -53,6 +54,11 @@ class App extends Component {
 			return acc
 		}, [])
 	}
+
+	addMealToFavorites = (id) => {
+		const favoritedMeal = this.state.meals.find(meal => meal.id === id)
+		this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal]})
+	}
 			
 	render() {
 		return (
@@ -60,11 +66,11 @@ class App extends Component {
 					<Route exact path='/' >
 						<Nav />
 						<Welcome meals={this.state.meals} updateMeals={this.updateMeals} />
-						<Meals meals={this.state.meals}/>
+						<Meals meals={this.state.meals} addMealToFavorites={this.addMealToFavorites}/>
 					</Route>
 					<Route exact path='/favorites'>
 						<Nav />
-						<Favorites />
+						<Favorites favoriteMeals={this.state.favoriteMeals}/>
 					</Route>
 			</div>
 		);

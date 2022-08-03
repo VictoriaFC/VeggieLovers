@@ -2,7 +2,7 @@ import React from 'react'
 import './Meals.css'
 import MealCard from '../../Components/MealCard/MealCard.js'
 
-const Meals = ({meals}) => {
+const Meals = ({meals, addMealToFavorites}) => {
 
 	const mealCardInfo = meals.map(meal => {
 		return(
@@ -13,6 +13,8 @@ const Meals = ({meals}) => {
 				description={meal.description}
 				instructions={meal.instructions}
 				ingredients={meal.ingredients}
+				isFavorite={meal.isFavorite}
+				addMealToFavorites={addMealToFavorites}
 			/>
 		)
 	})
