@@ -1,3 +1,10 @@
 .nav-bar {
 	color: black;
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.nav-home,
+.nav-favorites {
+	padding: 10px;
 }
