@@ -6,6 +6,7 @@ import './App.css'
 // Pages
 import Nav from '../../Components/Nav/Nav.js'
 import Welcome from '../../Components/Welcome/Welcome.js'
+import Meals from '../../Components/Meals/Meals.js'
 
 class App extends Component {
 	constructor() {
@@ -20,11 +21,7 @@ class App extends Component {
 			<div className="App">
 				<Nav />
 				<Welcome />
-				<header className="App-header">
-					<h1>
-						VeggieLovers
-					</h1>
-				</header>
+				<Meals />
 			</div>
 		);
 	}
