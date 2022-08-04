@@ -11,10 +11,10 @@ nav {
 .nav-favorites {
 	padding: 10px;
 	cursor: pointer;
+	border-radius: 5px;
 }
 
 .veggie-lovers-logo {
-	/* text-decoration: none; */
 	font-family: 'Epilogue', sans-serif;
 	cursor: pointer;
 	padding-left: 10px;
