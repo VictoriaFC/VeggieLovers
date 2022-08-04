@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './App.css'
 import { fetchAllMeals } from "../../apiCalls";
+import loadingGif from '../../assets/cooking spinner.gif'
 
 
 // Pages
@@ -84,7 +85,13 @@ class App extends Component {
 					<Route exact path='/' >
 						<Nav />
 						<Welcome meals={meals} updateMeals={this.updateMeals} />
-						{!isLoading && <Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>}
+						{!isLoading ? 
+						<Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>
+						:
+						<div>
+							<img className="loading-gif" src={loadingGif}/>
+						</div>
+						}
 					</Route>
 					<Route exact path='/favorites'>
 						<Nav />
