@@ -9,7 +9,8 @@ const MealCard = ({id, name, instructions, ingredients, addMealToFavorites, isFa
 			<p>{instructions}</p>
 			<h4>Ingredients:</h4>
 			<p>{ingredients}</p>
-			<button onClick={() => addMealToFavorites(id)}>Add to Favorites</button>
+			<button onClick={(event) => addMealToFavorites(event, id)}>Add to Favorites</button>
+			{isFavorite && <button>Added!</button>}
 		</div>
 	)
 }

@@ -19,6 +19,7 @@ class App extends Component {
 		this.state = {
 			meals: [],
 			favoriteMeals: [],
+			isFavorite: false,
 			isLoading: false
 		}
 	}
@@ -66,9 +67,10 @@ class App extends Component {
 		}, [])
 	}
 
-	addMealToFavorites = (id) => {
+	addMealToFavorites = (event, id) => {
+		event.preventDefault()
 		const favoritedMeal = this.state.meals.find(meal => meal.id === id)
-		this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal]})
+		this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal], isFavorite: true})
 	}
 
 	deleteMealFromFavorites = (id) => {
@@ -93,8 +95,8 @@ class App extends Component {
 					</Route>
 					<Route exact path='/favorites'>
 						<Nav />
-						<Favorites favoriteMeals={favoriteMeals} deleteMealFromFavorites={this.deleteMealFromFavorites}/>
 						<FavoritesHeader />
+						<Favorites favoriteMeals={favoriteMeals} deleteMealFromFavorites={this.deleteMealFromFavorites}/>
 					</Route>
 			</div>
 		);
