@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './App.css'
 import { fetchAllMeals } from "../../apiCalls";
@@ -43,6 +43,7 @@ class App extends Component {
 			return {
 				id: recipe.id,
 				name: recipe.name,
+				image: recipe.thumbnail_url,
 				instructions: this.parseApiInstructions(recipe.instructions),
 				ingredients: this.parseApiIngredients(recipe.sections),
 				isFavorite: false
@@ -79,7 +80,7 @@ class App extends Component {
 
     this.setState({ favoriteMeals: filteredFavorites });
   }
-			
+
 	render() {
 		const { favoriteMeals, meals, isLoading } = this.state;
 
