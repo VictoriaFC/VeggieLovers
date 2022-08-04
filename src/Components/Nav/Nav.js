@@ -16,7 +16,7 @@ const Nav = () => {
 					<button className='nav-home'>Home</button>
 				</Link>
 			)}
-			<Link to='/'>
+			<Link to='/' style={{ textDecoration: 'none' }}>
 				<h1 className='veggie-lovers-logo'>VeggieLovers</h1>
 			</Link>
 		</nav>

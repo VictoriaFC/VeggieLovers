@@ -14,5 +14,9 @@ nav {
 }
 
 .veggie-lovers-logo {
+	/* text-decoration: none; */
+	font-family: 'Epilogue', sans-serif;
 	cursor: pointer;
+	padding-left: 10px;
+	color: black;
 }

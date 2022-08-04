@@ -2,7 +2,7 @@ import React from 'react'
 import './Favorites.css'
 import FavoritesCard from '../../Components/FavoritesCard/FavoritesCard.js'
 
-const Favorites = ({favoriteMeals, removeMealFromFavorites}) => {
+const Favorites = ({favoriteMeals, deleteMealFromFavorites}) => {
 
 	const favoriteCardInfo = favoriteMeals.map(meal => {
 		return(
@@ -14,7 +14,7 @@ const Favorites = ({favoriteMeals, removeMealFromFavorites}) => {
 				instructions={meal.instructions}
 				ingredients={meal.ingredients}
 				isFavorite={meal.isFavorite}
-				removeMealFromFavorites={removeMealFromFavorites}
+				deleteMealFromFavorites={deleteMealFromFavorites}
 			/>
 		)
 	})

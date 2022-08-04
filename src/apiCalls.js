@@ -1,6 +1,11 @@
 
+function randomNumberBetween(min, max) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min)
+}
 
 export const fetchAllMeals = () => {
+	const from = randomNumberBetween(0, 500)
+
 	const options = {
 		method: 'GET',
 		headers: {
@@ -9,5 +14,5 @@ export const fetchAllMeals = () => {
 		}
 	}
 
-	return fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=3&tags=vegetarian&q=dinner', options)
+	return fetch(`https://tasty.p.rapidapi.com/recipes/list?from=${from}&size=10&tags=vegetarian&q=dinner`, options)
 }
