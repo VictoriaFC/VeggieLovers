@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './App.css'
 import { fetchAllMeals } from "../../apiCalls";
-import loadingGif from '../../assets/cooking spinner.gif'
 
 
 // Pages
@@ -10,6 +9,7 @@ import Nav from '../../Components/Nav/Nav.js'
 import Welcome from '../../Components/Welcome/Welcome.js'
 import Meals from '../../Components/Meals/Meals.js'
 import Favorites from '../../Components/Favorites/Favorites.js'
+import FavoritesHeader from '../../Components/FavoritesHeader/FavoritesHeader.js'
 import Loading from '../../Components/Loading/Loading.js'
 
 
@@ -89,12 +89,12 @@ class App extends Component {
 						{!isLoading ? 
 						<Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>
 						:
-						<Loading />
-						}
+						<Loading />}
 					</Route>
 					<Route exact path='/favorites'>
 						<Nav />
 						<Favorites favoriteMeals={favoriteMeals} deleteMealFromFavorites={this.deleteMealFromFavorites}/>
+						<FavoritesHeader />
 					</Route>
 			</div>
 		);

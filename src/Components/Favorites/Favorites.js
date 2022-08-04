@@ -20,11 +20,6 @@ const Favorites = ({favoriteMeals, deleteMealFromFavorites}) => {
 	})
 	return(
 		<div className='Favorites-container'>
-			<section className='header-section'>
-				<div className='text-section'>
-					<h2>Favorites</h2>
-				</div>
-			</section>
 			{favoriteCardInfo}
 		</div>
 	)
