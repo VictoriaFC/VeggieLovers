@@ -16,21 +16,27 @@ class App extends Component {
 		super()
 		this.state = {
 			meals: [],
-			favoriteMeals: []
+			favoriteMeals: [],
+			isLoading: false
 		}
 	}
 
 	updateMeals = () => {
+		this.setState({isLoading: true})
 		fetchAllMeals()
 		.then(response => response.json())
 		.then(data => {
-			this.setState({meals: this.parseApiMeals(data)})
+			this.setState({meals: this.parseApiMeals(data), isLoading: false})
 		})
 		.catch(error => console.log(error.message))
 	}
 
 	parseApiMeals = (data) => {
-		return data.results.map(recipe => {
+		const filteredResults = data.results
+																.filter(recipe => recipe.instructions && recipe.sections)
+																.slice(0, 3)
+
+		return filteredResults.map(recipe => {
 			return {
 				id: recipe.id,
 				name: recipe.name,
@@ -43,11 +49,15 @@ class App extends Component {
 	}
 
 	parseApiInstructions = (apiInstructions) => {
-		return apiInstructions.map(instruction => instruction.display_text)
+		const parseableInstructions = apiInstructions || []
+
+		return parseableInstructions.map(instruction => instruction.display_text)
 	}
 
-	parseApiIngredients = (sections) => { 
-		return sections.reduce((acc, section) => {
+	parseApiIngredients = (sections) => {
+		const parseableSections = sections || []
+
+		return parseableSections.reduce((acc, section) => {
 			section.components.forEach(component => {
 				acc.push(component.raw_text)
 			})
@@ -68,16 +78,18 @@ class App extends Component {
   }
 			
 	render() {
+		const { favoriteMeals, meals, isLoading } = this.state;
+
 		return (
 			<div className='App'>
 					<Route exact path='/' >
 						<Nav />
-						<Welcome meals={this.state.meals} updateMeals={this.updateMeals} />
-						<Meals meals={this.state.meals} addMealToFavorites={this.addMealToFavorites}/>
+						<Welcome meals={meals} updateMeals={this.updateMeals} />
+						{!isLoading && <Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>}
 					</Route>
 					<Route exact path='/favorites'>
 						<Nav />
-						<Favorites favoriteMeals={this.state.favoriteMeals} deleteMealFromFavorites={this.deleteMealFromFavorites}/>
+						<Favorites favoriteMeals={favoriteMeals} deleteMealFromFavorites={this.deleteMealFromFavorites}/>
 					</Route>
 			</div>
 		);

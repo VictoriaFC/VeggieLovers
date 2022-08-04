@@ -3,3 +3,19 @@
   border: 3px solid white;
   padding: 10px;
 }
+
+button {
+	border: 0.125rem solid #ffffff;
+	padding: 0.5rem;
+	background-color: black;
+	color: #ffffff;
+	font-weight: 700;
+	width: 13rem;
+	text-transform: uppercase;
+	font-family: "Montserrat", sans-serif;
+	cursor: pointer;
+}
+
+button:hover {
+	transform: scale(1.1);
+}
