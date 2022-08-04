@@ -10,7 +10,7 @@ const Meals = ({meals, addMealToFavorites}) => {
 				id={meal.id}
 				key={meal.id}
 				name={meal.name}
-				description={meal.description}
+				image={meal.thumbnail_url}
 				instructions={meal.instructions}
 				ingredients={meal.ingredients}
 				isFavorite={meal.isFavorite}

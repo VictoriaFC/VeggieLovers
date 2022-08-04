@@ -9,11 +9,11 @@ const Nav = () => {
 		<nav>
 			{location.pathname !== '/favorites' ? (
 				<Link to='/favorites'>
-					<button className='nav-favorites'>Favorites</button>
+					<button>Favorites</button>
 				</Link>
 			) : (
 				<Link to='/'>
-					<button className='nav-home'>Home</button>
+					<button>Home</button>
 				</Link>
 			)}
 			<Link to='/' style={{ textDecoration: 'none' }}>

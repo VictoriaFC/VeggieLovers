@@ -1,11 +1,8 @@
 .meals-container {
-	background-color: #282c34;
-	color: white;
+	background-color: white;
+	color: black;
 	border: 1px solid white;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
-	/* display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 20px; */
 }

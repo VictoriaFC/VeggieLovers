@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './App.css'
 import { fetchAllMeals } from "../../apiCalls";
@@ -9,6 +9,8 @@ import Nav from '../../Components/Nav/Nav.js'
 import Welcome from '../../Components/Welcome/Welcome.js'
 import Meals from '../../Components/Meals/Meals.js'
 import Favorites from '../../Components/Favorites/Favorites.js'
+import FavoritesHeader from '../../Components/FavoritesHeader/FavoritesHeader.js'
+import Loading from '../../Components/Loading/Loading.js'
 
 
 class App extends Component {
@@ -17,6 +19,7 @@ class App extends Component {
 		this.state = {
 			meals: [],
 			favoriteMeals: [],
+			isFavorite: false,
 			isLoading: false
 		}
 	}
@@ -40,7 +43,7 @@ class App extends Component {
 			return {
 				id: recipe.id,
 				name: recipe.name,
-				description: recipe.description,
+				image: recipe.thumbnail_url,
 				instructions: this.parseApiInstructions(recipe.instructions),
 				ingredients: this.parseApiIngredients(recipe.sections),
 				isFavorite: false
@@ -65,9 +68,10 @@ class App extends Component {
 		}, [])
 	}
 
-	addMealToFavorites = (id) => {
+	addMealToFavorites = (event, id) => {
+		event.preventDefault()
 		const favoritedMeal = this.state.meals.find(meal => meal.id === id)
-		this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal]})
+		this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal], isFavorite: true})
 	}
 
 	deleteMealFromFavorites = (id) => {
@@ -76,7 +80,7 @@ class App extends Component {
 
     this.setState({ favoriteMeals: filteredFavorites });
   }
-			
+
 	render() {
 		const { favoriteMeals, meals, isLoading } = this.state;
 
@@ -85,10 +89,14 @@ class App extends Component {
 					<Route exact path='/' >
 						<Nav />
 						<Welcome meals={meals} updateMeals={this.updateMeals} />
-						{!isLoading && <Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>}
+						{!isLoading ? 
+						<Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>
+						:
+						<Loading />}
 					</Route>
 					<Route exact path='/favorites'>
 						<Nav />
+						<FavoritesHeader />
 						<Favorites favoriteMeals={favoriteMeals} deleteMealFromFavorites={this.deleteMealFromFavorites}/>
 					</Route>
 			</div>

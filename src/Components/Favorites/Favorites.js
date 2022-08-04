@@ -20,7 +20,7 @@ const Favorites = ({favoriteMeals, deleteMealFromFavorites}) => {
 	})
 	return(
 		<div className='Favorites-container'>
-			{favoriteCardInfo}
+			{favoriteMeals.length > 0 ? favoriteCardInfo : <h3>No favorites yet!</h3>}
 		</div>
 	)
 }
