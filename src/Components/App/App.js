@@ -10,6 +10,7 @@ import Nav from '../../Components/Nav/Nav.js'
 import Welcome from '../../Components/Welcome/Welcome.js'
 import Meals from '../../Components/Meals/Meals.js'
 import Favorites from '../../Components/Favorites/Favorites.js'
+import Loading from '../../Components/Loading/Loading.js'
 
 
 class App extends Component {
@@ -88,9 +89,7 @@ class App extends Component {
 						{!isLoading ? 
 						<Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>
 						:
-						<div>
-							<img className="loading-gif" src={loadingGif}/>
-						</div>
+						<Loading />
 						}
 					</Route>
 					<Route exact path='/favorites'>
