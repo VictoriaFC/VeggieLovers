@@ -1,7 +1,18 @@
 .welcome-container {
+	background-image: url("../../assets/welcome-image.jpeg");
 	font-family: 'Epilogue', sans-serif;
 	background-color: white;
 	color: black;
 	border: 1px solid white;
+	height: 40vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.welcome-info-container {
+	width: 50%;
+	background-color: white;
+	opacity: 80%;
 }
 
