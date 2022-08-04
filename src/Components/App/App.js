@@ -40,7 +40,6 @@ class App extends Component {
 			return {
 				id: recipe.id,
 				name: recipe.name,
-				description: recipe.description,
 				instructions: this.parseApiInstructions(recipe.instructions),
 				ingredients: this.parseApiIngredients(recipe.sections),
 				isFavorite: false

@@ -1,11 +1,10 @@
 import React from 'react'
 import './MealCard.css'
 
-const MealCard = ({id, name, description, instructions, ingredients, addMealToFavorites, isFavorite}) => {
+const MealCard = ({id, name, instructions, ingredients, addMealToFavorites, isFavorite}) => {
 	return (
 		<div className='meal-card'>
 			<h3>{name}</h3>
-			<p>{description}</p>
 			<h4>Instructions:</h4>
 			<p>{instructions}</p>
 			<h4>Ingredients:</h4>
