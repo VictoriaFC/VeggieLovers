@@ -19,8 +19,10 @@ const MealCard = ({id, name, imageUrl, instructions, ingredients, addMealToFavor
 			</div>
 			<div className="meal-card-middle">
 				<h3 className="meal-card-header" >{name}</h3>
-				<h4>Instructions:</h4>
-				<p>{instructions}</p>
+				<div className="instructions-container">
+					<h4>Instructions:</h4>
+					<p>{instructions}</p>
+				</div>
 				{renderAddFavoritesButton()}
 			</div>
 			<div className="meal-card-right">
