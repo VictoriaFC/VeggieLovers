@@ -10,7 +10,7 @@ const Favorites = ({favoriteMeals, deleteMealFromFavorites}) => {
 				id={meal.id}
 				key={meal.id}
 				name={meal.name}
-				description={meal.description}
+				imageUrl={meal.imageUrl}
 				instructions={meal.instructions}
 				ingredients={meal.ingredients}
 				isFavorite={meal.isFavorite}
