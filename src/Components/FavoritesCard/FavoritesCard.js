@@ -1,14 +1,24 @@
 import React from 'react'
 import './FavoritesCard.css'
 
-const FavoritesCard = ({id, name, description, instructions, ingredients, deleteMealFromFavorites, isFavorite}) => {
+const FavoritesCard = ({id, name, imageUrl, instructions, ingredients, deleteMealFromFavorites, isFavorite}) => {
 	return (
 		<div className='meal-card'>
-			<h3>{name}</h3>
-			<p>{description}</p>
-			<p>{instructions}</p>
-			<p>{ingredients}</p>
+			<div className="meal-card-left">
+				<img className="meal-image"src={imageUrl}></img>
+			</div>
+			<div className="meal-card-middle">
+				<h3 className="meal-card-header" >{name}</h3>
+				<h4>Instructions:</h4>
+				<p>{instructions}</p>
 			<button onClick={() => deleteMealFromFavorites(id)}>Remove Favorite</button>
+			</div>
+			<div className="meal-card-right">
+				<div className="ingredients-container">
+					<h4>Ingredients:</h4>
+					<p>{ingredients}</p>
+				</div>
+			</div>
 		</div>
 	)
 }
