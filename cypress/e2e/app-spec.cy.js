@@ -1,5 +1,9 @@
 describe('app dashboard', () => {
 	beforeEach(() => {
+		cy.intercept('GET', 'https://tasty.p.rapidapi.com/recipes/list?from=0&size=10&tags=vegetarian&q=dinner', {
+			statusCode: 200,
+			fixture: "recipes.json"
+		})
 		cy.visit('http://localhost:3000/')
 	})
   it('should display nav bar with logo and favorites button', () => {
@@ -17,6 +21,15 @@ describe('app dashboard', () => {
 
 	it('should be able to click the Get Random Meals button', () => {
 		cy.get('.welcome-container').find('button').click()
+	})
+
+	it('should display 3 recipe ideas on click', () => {
+		cy.get('.welcome-container').find('button').click()
+		cy.get('.meals-container').find('.meal-card').should('have.length', 3)
+	})
+
+	it('should display appropriate info on meal cards', () => {
+		cy.get('.meals-container').find('.meal-card').first().contains('h3', 'Rainbow Sheet-Pan Pizza')
 	})
 
 
