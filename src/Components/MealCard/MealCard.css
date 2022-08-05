@@ -15,7 +15,6 @@
 }
 
 .meal-card-left {
-/* border: 2px solid pink; */
 width: 23%;
 display: flex;
 flex-direction: column;
@@ -26,14 +25,12 @@ padding: 5px;
 
 .meal-card-middle {
 	width: 54%;
-	/* padding: 20px; */
 	margin: 20px;
 	line-height: 1.5em;
 	overflow: scroll;
 }
 
 .meal-card-right {
-/* border: 2px solid green; */
 width: 23%;
 display: flex;
 flex-direction: column;
@@ -41,6 +38,7 @@ justify-content: center;
 align-items: center;
 padding: 5px;
 line-height: 1.5em;
+
 }
 
 .meal-image {
@@ -57,4 +55,5 @@ line-height: 1.5em;
 	border: 1px solid black;
 	height: 70%;
 	padding: 5px;
+	overflow: scroll;
 }
