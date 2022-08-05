@@ -9,8 +9,10 @@ const FavoritesCard = ({id, name, imageUrl, instructions, ingredients, deleteMea
 			</div>
 			<div className="meal-card-middle">
 				<h3 className="meal-card-header" >{name}</h3>
-				<h4>Instructions:</h4>
-				<p>{instructions}</p>
+				<div className="instructions-container">
+					<h4>Instructions:</h4>
+					<p>{instructions}</p>
+				</div>
 			<button onClick={() => deleteMealFromFavorites(id)}>Remove Favorite</button>
 			</div>
 			<div className="meal-card-right">

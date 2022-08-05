@@ -26,8 +26,6 @@ padding: 5px;
 .meal-card-middle {
 	width: 54%;
 	margin: 20px;
-	line-height: 1.5em;
-	overflow: scroll;
 }
 
 .meal-card-right {
@@ -54,7 +52,20 @@ line-height: 1.5em;
 
 .ingredients-container {
 	border: 1px solid black;
-	height: 70%;
+	height: 400px;
+	width: 280px;
 	padding: 5px;
 	overflow: scroll;
+}
+
+.instructions-container {
+	height: 400px;
+	width: 900px;
+	padding: 5px;
+	overflow: scroll;
+	line-height: 1.5em;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
