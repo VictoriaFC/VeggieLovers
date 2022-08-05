@@ -54,7 +54,7 @@ line-height: 1.5em;
 
 .ingredients-container {
 	border: 1px solid black;
-	height: 70%;
+	height: 400px;
 	padding: 5px;
 	overflow: scroll;
 }

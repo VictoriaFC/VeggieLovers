@@ -11,6 +11,7 @@ import Meals from '../../Components/Meals/Meals.js'
 import Favorites from '../../Components/Favorites/Favorites.js'
 import FavoritesHeader from '../../Components/FavoritesHeader/FavoritesHeader.js'
 import Loading from '../../Components/Loading/Loading.js'
+import LandingMessage from '../LandingMessage/LandingMessage';
 
 
 class App extends Component {
@@ -92,6 +93,7 @@ class App extends Component {
 					<Route exact path='/' >
 						<Nav />
 						<Welcome meals={meals} updateMeals={this.updateMeals} />
+						<LandingMessage />
 						{!isLoading ? 
 						<Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>
 						:
