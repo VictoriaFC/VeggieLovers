@@ -93,7 +93,7 @@ class App extends Component {
 					<Route exact path='/' >
 						<Nav />
 						<Welcome meals={meals} updateMeals={this.updateMeals} />
-						<LandingMessage />
+						{/* <LandingMessage /> */}
 						{!isLoading ? 
 						<Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>
 						:
