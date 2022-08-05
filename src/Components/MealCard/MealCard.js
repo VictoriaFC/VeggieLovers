@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './MealCard.css'
 
 
@@ -34,3 +35,13 @@ const MealCard = ({id, name, imageUrl, instructions, ingredients, addMealToFavor
 }
 
 export default MealCard 
+
+MealCard.propTypes = {
+	id: PropTypes.number.isRequired,
+	name: PropTypes.string.isRequired,
+	imageUrl: PropTypes.string.isRequired,
+	instructions: PropTypes.array.isRequired,
+	ingredients: PropTypes.array.isRequired,
+	addMealToFavorites: PropTypes.func,
+	isFavorite: PropTypes.bool
+}
