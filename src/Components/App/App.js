@@ -19,7 +19,6 @@ class App extends Component {
 		this.state = {
 			meals: [],
 			favoriteMeals: [],
-			isFavorite: false,
 			isLoading: false
 		}
 	}
@@ -68,16 +67,20 @@ class App extends Component {
 		}, [])
 	}
 
-	addMealToFavorites = (event, id) => {
-		event.preventDefault()
-		const favoritedMeal = this.state.meals.find(meal => meal.id === id)
-		this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal], isFavorite: true})
+	addMealToFavorites = (id) => {
+		const existingFavorite = this.state.favoriteMeals.find(meal => meal.id === id)
+		if (!existingFavorite) {
+			const favoritedMeal = this.state.meals.find(meal => meal.id === id)
+			favoritedMeal.isFavorite = true
+			this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal]})
+		}
 	}
 
 	deleteMealFromFavorites = (id) => {
     console.log(id);
-    const filteredFavorites = this.state.favoriteMeals.filter(meal => meal.id != id)
-
+		const findFavorite = this.state.favoriteMeals.find(meal => meal.id === id)
+    const filteredFavorites = this.state.favoriteMeals.filter(meal => meal.id !== id)
+		findFavorite.isFavorite = false
     this.setState({ favoriteMeals: filteredFavorites });
   }
 
