@@ -5,4 +5,25 @@
 	margin: 10px;
 	border: 1px solid black;
 	scroll-behavior: auto;
+	display: flex;
+	flex-direction: row;
+	height: 500px;
+}
+
+.meal-card-left {
+/* border: 2px solid pink; */
+width: 20%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.meal-card-right {
+/* border: 2px solid green; */
+width: 80%;
+}
+.meal-image {
+	height: 320px;
+	width: 250px;
+	object-fit: cover;
 }

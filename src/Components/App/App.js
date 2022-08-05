@@ -42,7 +42,7 @@ class App extends Component {
 			return {
 				id: recipe.id,
 				name: recipe.name,
-				image: recipe.thumbnail_url,
+				imageUrl: recipe.thumbnail_url,
 				instructions: this.parseApiInstructions(recipe.instructions),
 				ingredients: this.parseApiIngredients(recipe.sections),
 				isFavorite: false
