@@ -45,3 +45,7 @@ MealCard.propTypes = {
 	addMealToFavorites: PropTypes.func,
 	isFavorite: PropTypes.bool
 }
+
+MealCard.defaultProps = {
+	isFavorite: false
+}
