@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Favorites.css'
 import FavoritesCard from '../../Components/FavoritesCard/FavoritesCard.js'
 
@@ -26,3 +27,8 @@ const Favorites = ({favoriteMeals, deleteMealFromFavorites}) => {
 }
 
 export default Favorites 
+
+Favorites.propTypes = {
+	favoriteMeals: PropTypes.array,
+	deleteMealFromFavorites: PropTypes.func
+}
