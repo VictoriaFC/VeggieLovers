@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './FavoritesCard.css'
 
 const FavoritesCard = ({id, name, imageUrl, instructions, ingredients, deleteMealFromFavorites, isFavorite}) => {
@@ -24,3 +25,13 @@ const FavoritesCard = ({id, name, imageUrl, instructions, ingredients, deleteMea
 }
 
 export default FavoritesCard 
+
+FavoritesCard.propTypes = {
+	id: PropTypes.number.isRequired,
+	name: PropTypes.string.isRequired,
+	imageUrl: PropTypes.string.isRequired,
+	instructions: PropTypes.array.isRequired,
+	ingredients: PropTypes.array.isRequired,
+	deleteMealFromFavorites: PropTypes.func,
+	isFavorite: PropTypes.bool
+}
