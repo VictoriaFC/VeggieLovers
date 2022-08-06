@@ -1,4 +1,4 @@
-describe('nav functionality', () => {
+describe('Nav Functionality', () => {
 	beforeEach(() => {
 		cy.intercept({ method: 'GET', url: 'https://tasty.p.rapidapi.com/recipes/list*'}, {
 			statusCode: 200,
@@ -26,6 +26,13 @@ describe('nav functionality', () => {
 		cy.get('nav').find('button').click()
 		cy.url().should('eq', 'http://localhost:3000/favorites')
 		cy.get('nav').find('button').click()
+		cy.url().should('eq', 'http://localhost:3000/')
+	})
+
+	it('should take the user to the home page after clicking the logo', () => {
+		cy.get('nav').find('button').click()
+		cy.url().should('eq', 'http://localhost:3000/favorites')
+		cy.get('nav').find('.veggie-lovers-logo').click()
 		cy.url().should('eq', 'http://localhost:3000/')
 	})
 })

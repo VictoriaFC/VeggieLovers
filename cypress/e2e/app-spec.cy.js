@@ -1,4 +1,4 @@
-describe('app dashboard', () => {
+describe('Home Page', () => {
 	beforeEach(() => {
 		cy.intercept({ method: 'GET', url: 'https://tasty.p.rapidapi.com/recipes/list*'}, {
 			statusCode: 200,
@@ -29,6 +29,11 @@ describe('app dashboard', () => {
 		cy.get('.meals-container').find('.meal-card').should('have.length', 3)
 	})
 
+	it('should display recipe image on meal cards', () => {
+		cy.get('.welcome-container').find('button').click()
+		cy.get('.meal-card').first().find('.meal-image').should('be.visible')
+	})
+
 	it('should display recipe name on meal cards', () => {
 		cy.get('.welcome-container').find('button').click()
 		cy.get('.meals-container').find('.meal-card').first().contains('h3', 'Grilled Cauliflower Tacos')
@@ -54,5 +59,15 @@ describe('app dashboard', () => {
 	it('should be able to click the Add to Favorites button at the bottom of the meal cards', () => {
 		cy.get('.welcome-container').find('button').click()
 		cy.get('.meals-container').find('.meal-card').first().contains('button', 'Add to Favorites').click()
+	})
+
+	it('should be able to add recipe to favorites on click', () => {
+		it('should be able to click the Add to Favorites button at the bottom of the meal cards', () => {
+			cy.get('.welcome-container').find('button').click()
+			cy.get('.meals-container').find('.meal-card').first().contains('button', 'Add to Favorites').click()
+			cy.get('nav').find('button').click()
+			cy.get('.favorites-container').find('.fav-meal-card').should('have.length', 1)
+			cy.get('.favorites-container').find('.fav-meal-card').contains('h3', 'Grilled Cauliflower Tacos')
+		})
 	})
 })
