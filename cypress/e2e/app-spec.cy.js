@@ -1,11 +1,12 @@
 describe('app dashboard', () => {
 	beforeEach(() => {
-		cy.intercept('GET', 'https://tasty.p.rapidapi.com/recipes/list?from=0&size=10&tags=vegetarian&q=dinner', {
+		cy.intercept({ method: 'GET', url: 'https://tasty.p.rapidapi.com/recipes/list*'}, {
 			statusCode: 200,
 			fixture: "recipes.json"
 		})
 		cy.visit('http://localhost:3000/')
 	})
+
   it('should display nav bar with logo and favorites button', () => {
 		cy.get('nav').should('be.visible')
 		cy.get('nav').find('.veggie-lovers-logo').contains('h1', 'VeggieLovers')
@@ -28,9 +29,30 @@ describe('app dashboard', () => {
 		cy.get('.meals-container').find('.meal-card').should('have.length', 3)
 	})
 
-	it('should display appropriate info on meal cards', () => {
-		cy.get('.meals-container').find('.meal-card').first().contains('h3', 'Rainbow Sheet-Pan Pizza')
+	it('should display recipe name on meal cards', () => {
+		cy.get('.welcome-container').find('button').click()
+		cy.get('.meals-container').find('.meal-card').first().contains('h3', 'Grilled Cauliflower Tacos')
 	})
 
+	it('should display recipe instructions on meal cards', () => {
+		cy.get('.welcome-container').find('button').click()
+		cy.get('.meals-container').find('.meal-card').first().contains('h4', 'Instructions')
+		cy.get('.meals-container').find('.meal-card').first().contains('p', 'Preheat the oven')
+	})
 
+	it('should display ingredients on meal cards', () => {
+		cy.get('.welcome-container').find('button').click()
+		cy.get('.meals-container').find('.meal-card').first().contains('h4', 'Ingredients')
+		cy.get('.meals-container').find('.meal-card').first().contains('p', '⅓ cup avocado oil')
+	})
+
+	it('should display an Add to Favorites button at the bottom of the meal cards', () => {
+		cy.get('.welcome-container').find('button').click()
+		cy.get('.meals-container').find('.meal-card').first().contains('button', 'Add to Favorites')
+	})
+
+	it('should be able to click the Add to Favorites button at the bottom of the meal cards', () => {
+		cy.get('.welcome-container').find('button').click()
+		cy.get('.meals-container').find('.meal-card').first().contains('button', 'Add to Favorites').click()
+	})
 })
