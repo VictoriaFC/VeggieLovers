@@ -1,7 +1,7 @@
+/* desktop screen size styling*/
 @media screen and (min-width: 1376px) {
 	.fav-meal-card {
 		box-sizing: border-box;
-		border: 5px solid white;
 		padding: 10px;
 		margin-top: 10px;
 		margin-bottom: 10px;
@@ -10,9 +10,14 @@
 		border: 1px solid black;
 		scroll-behavior: auto;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
 		height: 600px;
 		border-radius: 5px;
+	}
+
+	.fav-top-section {
+		display: flex;
+		flex-direction: row;
 	}
 
 	.fav-meal-card-left {
@@ -22,24 +27,7 @@
 		justify-content: center;
 		align-items: center;
 		padding: 5px;
-		border: 1px solid pink;
-	}
-
-	.fav-meal-card-middle {
-		width: 54%;
-		margin: 20px;
-	}
-
-	.fav-meal-card-right {
-		width: 23%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 5px;
-		line-height: 1.5em;
-		border: 1px solid pink;
-
+		/* border: 1px solid pink; */
 	}
 
 	.fav-meal-image {
@@ -48,22 +36,14 @@
 		object-fit: cover;
 	}
 
-	.fav-meal-card-header {
-		text-transform: uppercase;
-		text-decoration: underline;
-	}
-
-	.fav-ingredients-container {
-		border: 1px solid black;
-		height: 400px;
-		width: 90%;
-		/* padding: 5px; */
-		overflow: scroll;
+	.fav-meal-card-middle {
+		width: 54%;
+		margin: 20px;
 	}
 
 	.fav-instructions-container {
 		height: 400px;
-		width: 50%;
+		width: 100%;
 		padding: 5px;
 		overflow: scroll;
 		line-height: 1.5em;
@@ -71,13 +51,65 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		/* border: 1px solid blue; */
+	}
+
+
+	.fav-meal-card-right {
+		width: 23%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 5px;
+		/* border: 1px solid pink; */
+
+	}
+
+	.fav-ingredients-container {
+		border: 1px solid black;
+		height: 400px;
+		width: 90%;
+		overflow: scroll;
+		line-height: 1.5em;
+	}
+
+	.fav-meal-card-header {
+		text-transform: uppercase;
+		text-decoration: underline;
 	}
 }
 
+
+/* mobile screen size styling*/
 @media screen and (max-width: 1375px) {
 	.fav-meal-card {
+		border: 1px solid black;
+		margin: 10px;
+		padding: 10px;
+		border-radius: 5px;
 		display: flex;
 		flex-direction: column;
-		background-color: purple;
+		/* background-color: pink; */
+	}
+
+	.fav-meal-image {
+		height: 275px;
+		width: 175px;
+		object-fit: cover;
+	}
+
+	.fav-instructions-container {
+		line-height: 1.5em;
+	}
+
+	.fav-ingredients-container {
+		line-height: 1.5em;
+		margin-bottom: 5px;
+	}
+
+	.fav-meal-card-header {
+		text-transform: uppercase;
+		text-decoration: underline;
 	}
 }
