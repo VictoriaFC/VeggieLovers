@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import './MealCard.css'
 
 
-const MealCard = ({id, name, imageUrl, instructions, ingredients, addMealToFavorites, isFavorite}) => {
-	
+const MealCard = (props) => {
+	const {id, name, imageUrl, instructions, ingredients, addMealToFavorites, isFavorite} = props;
 	const renderAddFavoritesButton = () => {
 		if(isFavorite) {
 			return <button>Added!</button>
@@ -34,7 +34,7 @@ const MealCard = ({id, name, imageUrl, instructions, ingredients, addMealToFavor
 				</div>
 			</section>
 			<section className="bottom-section">
-				<div className>
+				<div>
 					{renderAddFavoritesButton()}
 				</div>
 			</section>
