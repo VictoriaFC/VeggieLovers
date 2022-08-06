@@ -1,22 +1,48 @@
-nav {
-	color: black;
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	align-items: center;
-	padding-right: 10px;
+@media screen and (min-width: 1376px) {
+	nav {
+		color: black;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 10px;
+	}
+	
+	.nav-home,
+	.nav-favorites {
+		padding: 10px;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	
+	.veggie-lovers-logo {
+		font-family: 'Epilogue', sans-serif;
+		cursor: pointer;
+		padding-left: 10px;
+		color: black;
+	}
 }
 
-.nav-home,
-.nav-favorites {
-	padding: 10px;
-	cursor: pointer;
-	border-radius: 5px;
-}
+@media screen and (max-width: 1375px) {
+	nav {
+		color: black;
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;
+		align-items: center;
+		padding-right: 10px;
+	}
 
-.veggie-lovers-logo {
-	font-family: 'Epilogue', sans-serif;
-	cursor: pointer;
-	padding-left: 10px;
-	color: black;
+	.veggie-lovers-logo {
+		font-family: 'Epilogue', sans-serif;
+		cursor: pointer;
+		padding-left: 10px;
+		color: black;
+	}
+
+	.fav-button,
+	.home-button {
+		width: 8rem;
+		padding: 0.35rem;
+	}
 }

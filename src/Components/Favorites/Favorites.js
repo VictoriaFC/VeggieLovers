@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './Favorites.css'
 import FavoritesCard from '../../Components/FavoritesCard/FavoritesCard.js'
 
@@ -10,7 +11,7 @@ const Favorites = ({favoriteMeals, deleteMealFromFavorites}) => {
 				id={meal.id}
 				key={meal.id}
 				name={meal.name}
-				description={meal.description}
+				imageUrl={meal.imageUrl}
 				instructions={meal.instructions}
 				ingredients={meal.ingredients}
 				isFavorite={meal.isFavorite}
@@ -19,10 +20,15 @@ const Favorites = ({favoriteMeals, deleteMealFromFavorites}) => {
 		)
 	})
 	return(
-		<div className='Favorites-container'>
+		<div className='favorites-container'>
 			{favoriteMeals.length > 0 ? favoriteCardInfo : <h3>No favorites yet!</h3>}
 		</div>
 	)
 }
 
 export default Favorites 
+
+Favorites.propTypes = {
+	favoriteMeals: PropTypes.array,
+	deleteMealFromFavorites: PropTypes.func
+}

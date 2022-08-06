@@ -1,6 +1,7 @@
 import React from 'react'
 import './Meals.css'
 import MealCard from '../../Components/MealCard/MealCard.js'
+import PropTypes from 'prop-types'
 
 const Meals = ({meals, addMealToFavorites}) => {
 
@@ -10,7 +11,7 @@ const Meals = ({meals, addMealToFavorites}) => {
 				id={meal.id}
 				key={meal.id}
 				name={meal.name}
-				image={meal.thumbnail_url}
+				imageUrl={meal.imageUrl}
 				instructions={meal.instructions}
 				ingredients={meal.ingredients}
 				isFavorite={meal.isFavorite}
@@ -26,3 +27,8 @@ const Meals = ({meals, addMealToFavorites}) => {
 }
 
 export default Meals 
+
+Meals.propTypes = {
+	meals: PropTypes.array,
+	addMealToFavorites: PropTypes.func
+}

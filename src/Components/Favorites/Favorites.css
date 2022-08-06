@@ -1,26 +1,7 @@
 .favorites-container {
-	background-color: #282c34;
-	color: white;
-	border: 1px solid white;
-	padding: 20px;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 20px;
-}
-
-.header-section {
-	background-image: url('../../assets/favorites-image.jpeg');
-	height: 37vh;
-	/* border: 1px solid black; */
-}
-
-.text-section {
-	/* border: 1px solid black; */
-	width: 50%;
 	background-color: white;
-	opacity: 80%;
-	height: 37vh;
+	color: black;
+	border: 1px solid white;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 }

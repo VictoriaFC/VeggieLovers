@@ -11,6 +11,7 @@ import Meals from '../../Components/Meals/Meals.js'
 import Favorites from '../../Components/Favorites/Favorites.js'
 import FavoritesHeader from '../../Components/FavoritesHeader/FavoritesHeader.js'
 import Loading from '../../Components/Loading/Loading.js'
+import LandingMessage from '../LandingMessage/LandingMessage';
 
 
 class App extends Component {
@@ -19,7 +20,6 @@ class App extends Component {
 		this.state = {
 			meals: [],
 			favoriteMeals: [],
-			isFavorite: false,
 			isLoading: false
 		}
 	}
@@ -43,7 +43,7 @@ class App extends Component {
 			return {
 				id: recipe.id,
 				name: recipe.name,
-				image: recipe.thumbnail_url,
+				imageUrl: recipe.thumbnail_url,
 				instructions: this.parseApiInstructions(recipe.instructions),
 				ingredients: this.parseApiIngredients(recipe.sections),
 				isFavorite: false
@@ -68,16 +68,20 @@ class App extends Component {
 		}, [])
 	}
 
-	addMealToFavorites = (event, id) => {
-		event.preventDefault()
-		const favoritedMeal = this.state.meals.find(meal => meal.id === id)
-		this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal], isFavorite: true})
+	addMealToFavorites = (id) => {
+		const existingFavorite = this.state.favoriteMeals.find(meal => meal.id === id)
+		if (!existingFavorite) {
+			const favoritedMeal = this.state.meals.find(meal => meal.id === id)
+			favoritedMeal.isFavorite = true
+			this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal]})
+		}
 	}
 
 	deleteMealFromFavorites = (id) => {
     console.log(id);
-    const filteredFavorites = this.state.favoriteMeals.filter(meal => meal.id != id)
-
+		const findFavorite = this.state.favoriteMeals.find(meal => meal.id === id)
+    const filteredFavorites = this.state.favoriteMeals.filter(meal => meal.id !== id)
+		findFavorite.isFavorite = false
     this.setState({ favoriteMeals: filteredFavorites });
   }
 
@@ -89,6 +93,7 @@ class App extends Component {
 					<Route exact path='/' >
 						<Nav />
 						<Welcome meals={meals} updateMeals={this.updateMeals} />
+						{/* <LandingMessage /> */}
 						{!isLoading ? 
 						<Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>
 						:
