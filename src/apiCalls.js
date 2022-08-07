@@ -1,4 +1,3 @@
-
 function randomNumberBetween(min, max) { // min and max included 
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
@@ -9,7 +8,7 @@ export const fetchAllMeals = () => {
 	const options = {
 		method: 'GET',
 		headers: {
-			'X-RapidAPI-Key': '9b41426ce7msh4d7446a1f1cf974p1176e9jsne8a217411590',
+			'X-RapidAPI-Key': process.env.REACT_APP_TASTY_API_KEY,
 			'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
 		}
 	}
