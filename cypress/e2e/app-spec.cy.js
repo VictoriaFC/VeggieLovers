@@ -16,7 +16,7 @@ describe('Home Page', () => {
 	it('should display a welcome container', () => {
 		cy.get('.welcome-container').should('be.visible')
 		cy.get('.welcome-container').find('h1').contains('Welcome to VeggieLovers')
-		cy.get('.welcome-container').find('p').contains('Are you looking for a date night idea?')
+		cy.get('.welcome-container').find('h4').contains('Are you looking for date ideas?')
 		cy.get('.welcome-container').find('button').contains('get random meals')
 	})
 
