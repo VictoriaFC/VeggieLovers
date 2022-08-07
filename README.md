@@ -30,6 +30,7 @@ https://veggielovers.herokuapp.com/
 - Have only the recipe title, image and 'see full recipe' display on the home page. The button would take them to a new page with instructrions/ingredients.
 - Users would be able to favorite recipes and rate them.
 - Add a cocktail or mocktail to be paired with the vegetarian recipe. 
+- Add landing message to body of the home page.
 
 ## Created By:
 
