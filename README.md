@@ -13,7 +13,7 @@ An app designed for vegetarian couples who want to stay in for date night and co
 https://veggielovers.herokuapp.com/
 
 ## See it in Action!
-Add visuals here
+![veggielovers_vid](https://user-images.githubusercontent.com/98445902/183271183-304722c3-2e99-406b-bd8a-80097723ff2a.gif)
 
 ## Technologies Used
 
@@ -29,9 +29,6 @@ Add visuals here
 - Have only the recipe title, image and 'see full recipe' display on the home page. The button would take them to a new page with instructrions/ingredients.
 - Users would be able to favorite recipes and rate them.
 - Add a cocktail or mocktail to be paired with the vegetarian recipe. 
-
-## Reflection
-
 
 ## Created By:
 
