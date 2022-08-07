@@ -13,7 +13,8 @@ An app designed for vegetarian couples who want to stay in for date night and co
 https://veggielovers.herokuapp.com/
 
 ## See it in Action!
-![veggielovers_vid](https://user-images.githubusercontent.com/98445902/183271183-304722c3-2e99-406b-bd8a-80097723ff2a.gif)
+![veggielovers_vid_AdobeExpress (1)](https://user-images.githubusercontent.com/98445902/183271861-f8c2b816-8f60-4c41-beca-e72d2f3ca352.gif)
+
 
 ## Technologies Used
 
