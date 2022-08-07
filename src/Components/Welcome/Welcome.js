@@ -7,9 +7,9 @@ const Welcome = ({updateMeals}) => {
 		<div className='welcome-container'>
 			<section className="welcome-info-container">
 			<h1>Welcome to VeggieLovers</h1>
-			<h4>Are you looking for a date night idea?<br></br> 
+			<h4>Are you looking for date ideas?<br></br> 
 			Are you vegetarian but feeling a bit uninspired when cooking?<br></br>
-			You've come to the right place! At VeggieLovers we give you three delicious dinner recipes to make at home together.</h4>
+			You've come to the right place! At VeggieLovers we give you three delicious vegetarian recipes to make at home together.</h4>
 			<button onClick={updateMeals}>get random meals</button>
 			</section>
 		</div>
