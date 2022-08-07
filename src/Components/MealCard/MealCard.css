@@ -7,7 +7,7 @@
 		margin-bottom: 10px;
 		margin-right: 70px;
 		margin-left: 70px;
-		border: 1px solid black;
+		border: 2px solid black;
 		scroll-behavior: auto;
 		display: flex;
 		flex-direction: column;
@@ -27,13 +27,14 @@
 		justify-content: center;
 		align-items: center;
 		padding: 5px;
-		border: 1px solid pink;
+		/* border: 1px solid pink; */
 	}
 
 	.meal-image {
 		height: 400px;
-		width: 280px;
+		width: 80%;
 		object-fit: cover;
+		border-radius: 5px;
 	}
 
 	.meal-card-middle {
@@ -63,21 +64,26 @@
 		align-items: center;
 		padding: 5px;
 		/* border: 1px solid pink; */
-
 	}
 
 	.ingredients-container {
-		border: 1px solid black;
+		/* border: 1px solid black; */
 		height: 400px;
-		width: 90%;
+		width: 80%;
 		overflow: scroll;
 		line-height: 1.5em;
 		padding: 5px;
+		border-radius: 5px;
+		/* background-color: lightgray;
+		background-color:  rgb(245,233,227, 0.50); */
+		background-color: rgb(211,202,196, 0.25);
+		opacity: 80%;
 	}
 
 	.meal-card-header {
 		text-transform: uppercase;
 		text-decoration: underline;
+		font-size: larger;
 	}
 }
 
@@ -95,9 +101,10 @@
 	}
 
 	.meal-image {
-		height: 275px;
-		width: 175px;
+		height: 300px;
+		width: 250px;
 		object-fit: cover;
+		border-radius: 5px;
 	}
 
 	.instructions-container {
@@ -107,6 +114,7 @@
 	.ingredients-container {
 		line-height: 1.5em;
 		margin-bottom: 5px;
+		border-radius: 5px;
 	}
 
 	.meal-card-header {
