@@ -2,6 +2,9 @@
 
 An app designed for vegetarian couples who want to stay in for date night and cook but need recipe ideas! At the click of a button 3 vegetarian dishes are displayed and they can favorite any of them to come back to later. 
 
+## Explore via Heroku
+https://veggielovers.herokuapp.com/
+
 ## How to Run the Application
 
 1. Clone down this repo.
@@ -9,8 +12,18 @@ An app designed for vegetarian couples who want to stay in for date night and co
 3. Run npm install
 4. Run npm start
 
-## OR explore via Heroku
-https://veggielovers.herokuapp.com/
+*If you want to run the app locally you'll need an api key. Reach out to [VictoriaFC](https://github.com/VictoriaFC) if you need this information. Or head [HERE](https://rapidapi.com/apidojo/api/tasty/) to get your own. 
+
+How to set api key locally:
+1. Create .env file at the root of the project
+2. Add `REACT_APP_TASTY_API_KEY=<your api key>`
+3. Restart app server
+
+## How to Run Cypress Tests
+
+1. Follow the steps above
+2. Run npm i -D cypress
+4. Run npm run cypress
 
 ## See it in Action!
 ![veggielovers_vid_AdobeExpress (1)](https://user-images.githubusercontent.com/98445902/183271861-f8c2b816-8f60-4c41-beca-e72d2f3ca352.gif)
