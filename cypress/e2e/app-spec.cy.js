@@ -62,12 +62,10 @@ describe('Home Page', () => {
 	})
 
 	it('should be able to add recipe to favorites on click', () => {
-		it('should be able to click the Add to Favorites button at the bottom of the meal cards', () => {
-			cy.get('.welcome-container').find('button').click()
-			cy.get('.meals-container').find('.meal-card').first().contains('button', 'Add to Favorites').click()
-			cy.get('nav').find('button').click()
-			cy.get('.favorites-container').find('.fav-meal-card').should('have.length', 1)
-			cy.get('.favorites-container').find('.fav-meal-card').contains('h3', 'Grilled Cauliflower Tacos')
-		})
+		cy.get('.welcome-container').find('button').click()
+		cy.get('.meals-container').find('.meal-card').first().contains('button', 'Add to Favorites').click()
+		cy.get('nav').find('button').click()
+		cy.get('.favorites-container').find('.fav-meal-card').should('have.length', 1)
+		cy.get('.favorites-container').find('.fav-meal-card').contains('h3', 'Grilled Cauliflower Tacos')
 	})
 })
