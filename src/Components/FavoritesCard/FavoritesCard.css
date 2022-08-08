@@ -34,6 +34,7 @@
 		height: 400px;
 		width: 280px;
 		object-fit: cover;
+		border-radius: 5px;
 	}
 
 	.fav-meal-card-middle {
@@ -67,12 +68,14 @@
 	}
 
 	.fav-ingredients-container {
-		border: 1px solid black;
 		height: 400px;
 		width: 90%;
 		overflow: scroll;
 		line-height: 1.5em;
 		padding: 5px;
+		background-color: rgb(211,202,196, 0.25);
+		opacity: 80%;
+		border-radius: 5px;
 	}
 
 	.fav-meal-card-header {
@@ -98,6 +101,7 @@
 		height: 275px;
 		width: 175px;
 		object-fit: cover;
+		border-radius: 5px;
 	}
 
 	.fav-instructions-container {
@@ -107,6 +111,7 @@
 	.fav-ingredients-container {
 		line-height: 1.5em;
 		margin-bottom: 5px;
+		border-radius: 5px;
 	}
 
 	.fav-meal-card-header {
