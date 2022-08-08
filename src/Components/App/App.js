@@ -11,7 +11,6 @@ import Meals from '../../Components/Meals/Meals.js'
 import Favorites from '../../Components/Favorites/Favorites.js'
 import FavoritesHeader from '../../Components/FavoritesHeader/FavoritesHeader.js'
 import Loading from '../../Components/Loading/Loading.js'
-import LandingMessage from '../LandingMessage/LandingMessage';
 
 
 class App extends Component {
@@ -22,6 +21,20 @@ class App extends Component {
 			favoriteMeals: [],
 			isLoading: false
 		}
+	}
+
+	componentDidMount = () => {
+		this.setState({favoriteMeals: this.getFavoriteMealsFromLocalStorage()})
+	}
+
+	updateFavoriteMealsInLocalStorage = (newFavoriteMeals) => {
+		localStorage.setItem('favoriteMeals', JSON.stringify(newFavoriteMeals))
+	}
+
+	getFavoriteMealsFromLocalStorage = () => {
+		const favoriteMealsJson = localStorage.getItem('favoriteMeals')
+
+		return favoriteMealsJson ? JSON.parse(favoriteMealsJson) : []
 	}
 
 	updateMeals = () => {
@@ -73,7 +86,9 @@ class App extends Component {
 		if (!existingFavorite) {
 			const favoritedMeal = this.state.meals.find(meal => meal.id === id)
 			favoritedMeal.isFavorite = true
-			this.setState({favoriteMeals: [...this.state.favoriteMeals, favoritedMeal]})
+			const newFavoriteMeals = [...this.state.favoriteMeals, favoritedMeal]
+			this.setState({favoriteMeals: newFavoriteMeals})
+			this.updateFavoriteMealsInLocalStorage(newFavoriteMeals)
 		}
 	}
 
@@ -82,6 +97,7 @@ class App extends Component {
 		const findFavorite = this.state.favoriteMeals.find(meal => meal.id === id)
     const filteredFavorites = this.state.favoriteMeals.filter(meal => meal.id !== id)
 		findFavorite.isFavorite = false
+		this.updateFavoriteMealsInLocalStorage(filteredFavorites)
     this.setState({ favoriteMeals: filteredFavorites });
   }
 
