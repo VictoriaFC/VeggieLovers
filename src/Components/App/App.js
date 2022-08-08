@@ -27,8 +27,9 @@ class App extends Component {
 		this.setState({favoriteMeals: this.getFavoriteMealsFromLocalStorage()})
 	}
 
-	updateFavoriteMealsInLocalStorage = (newFavoriteMeals) => {
+	updateFavoriteMeals = (newFavoriteMeals) => {
 		localStorage.setItem('favoriteMeals', JSON.stringify(newFavoriteMeals))
+    this.setState({ favoriteMeals: newFavoriteMeals });
 	}
 
 	getFavoriteMealsFromLocalStorage = () => {
@@ -87,8 +88,7 @@ class App extends Component {
 			const favoritedMeal = this.state.meals.find(meal => meal.id === id)
 			favoritedMeal.isFavorite = true
 			const newFavoriteMeals = [...this.state.favoriteMeals, favoritedMeal]
-			this.setState({favoriteMeals: newFavoriteMeals})
-			this.updateFavoriteMealsInLocalStorage(newFavoriteMeals)
+			this.updateFavoriteMeals(newFavoriteMeals)
 		}
 	}
 
@@ -97,8 +97,7 @@ class App extends Component {
 		const findFavorite = this.state.favoriteMeals.find(meal => meal.id === id)
     const filteredFavorites = this.state.favoriteMeals.filter(meal => meal.id !== id)
 		findFavorite.isFavorite = false
-		this.updateFavoriteMealsInLocalStorage(filteredFavorites)
-    this.setState({ favoriteMeals: filteredFavorites });
+		this.updateFavoriteMeals(filteredFavorites)
   }
 
 	render() {
@@ -109,7 +108,6 @@ class App extends Component {
 					<Route exact path='/' >
 						<Nav />
 						<Welcome meals={meals} updateMeals={this.updateMeals} />
-						{/* <LandingMessage /> */}
 						{!isLoading ? 
 						<Meals meals={meals} addMealToFavorites={this.addMealToFavorites}/>
 						:
