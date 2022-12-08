@@ -3,7 +3,7 @@
 An app designed for vegetarian couples who want to stay in for date night and cook but need recipe ideas! At the click of a button 3 vegetarian dishes are displayed and they can favorite any of them to come back to later. 
 
 ## Explore via Heroku
-https://veggielovers.herokuapp.com/
+https://veggie-lovers.vercel.app/
 
 ## How to Run the Application
 
